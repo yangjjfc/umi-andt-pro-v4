@@ -3,9 +3,12 @@
 let CURRENT: string | string[] = 'NULL';
 
 type CurrentAuthorityType = string | string[] | (() => typeof CURRENT);
+// type renderAuthorizeType =
 /**
  * use  authority or getAuthority
- * 获取当前用户的权限
+ * 获取当前用户的权限,高阶函数HOC
+ * <T>(Authorized: T): ((currentAuthority: CurrentAuthorityType) => T)
+ * (currentAuthority: CurrentAuthorityType): T 
  * @param {string|()=>String} currentAuthority
  */
 const renderAuthorize = <T>(Authorized: T): ((currentAuthority: CurrentAuthorityType) => T) => (
@@ -26,6 +29,5 @@ const renderAuthorize = <T>(Authorized: T): ((currentAuthority: CurrentAuthority
   }
   return Authorized;
 };
-
 export { CURRENT };
 export default <T>(Authorized: T) => renderAuthorize<T>(Authorized);

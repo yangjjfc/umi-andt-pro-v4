@@ -4,6 +4,7 @@ type DefaultSettings = ProSettings & {
   pwa: boolean;
 };
 
+//默认设置
 const proSettings: DefaultSettings = {
   navTheme: 'dark',
   // 拂晓蓝

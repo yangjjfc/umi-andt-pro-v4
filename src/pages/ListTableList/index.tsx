@@ -83,7 +83,7 @@ const TableList: React.FC<{}> = () => {
       title: '规则名称',
       dataIndex: 'name',
       tip: '规则名称是唯一的 key',
-      formItemProps: {
+      fieldProps: {
         rules: [
           {
             required: true,

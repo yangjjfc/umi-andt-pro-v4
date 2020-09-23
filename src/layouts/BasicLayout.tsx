@@ -93,9 +93,10 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
     children,
     settings,
     location = {
-      pathname: '/',
+        pathname: '/',
     },
-  } = props;
+} = props;
+console.log("settings", settings)
 
   // 创建ref,useRef 返回一个可变的 ref 对象，其 .current 属性被初始化为传入的参数
   const menuDataRef = useRef<MenuDataItem[]>([]);
